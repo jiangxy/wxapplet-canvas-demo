@@ -149,7 +149,7 @@ class Game {
                     // 将page的状态改为游戏结束
                     that.statusCallback(2);
                     wx.navigateTo({
-                        url: 'logs'
+                        url: '../list/index'
                     });
                 }
                 // 重新开始游戏 
