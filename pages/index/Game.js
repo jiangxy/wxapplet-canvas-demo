@@ -1,4 +1,5 @@
-import Component from './Component.js'
+import Component from './Component.js';
+import config from '../../config.js';
 
 /**
  * 对一局游戏的抽象
@@ -129,9 +130,10 @@ class Game {
     stop() {
         // 先停止绘制
         clearInterval(this.interval);
-
         // 停止背景音乐
         wx.stopBackgroundAudio();
+        // 发送数据
+        this.sendRecord();
 
         // 然后显示一个提示
         var that = this;  // 蛋疼的that
@@ -157,6 +159,29 @@ class Game {
                     that.start();
                 }
             }
+        });
+    }
+
+    /**
+     * 向服务端汇报数据
+     */
+    sendRecord() {
+        const app = getApp();
+        const that = this;
+        app.getUserInfo(function (userInfo) {
+            // 要发送到服务端的数据，正常情况下应该把openId发过去的，懒得搞了
+            const record = {
+                name: userInfo.nickName,
+                pic: userInfo.avatarUrl,
+                score: that.frameCount
+            };
+            console.debug('send record to server: %o', record);
+            // 这个请求即使失败也暂时不处理
+            wx.request({
+                url: config.host + '/flappy/send',  // 注意只能请求公众平台中配置好的域名
+                data: record,
+                method: 'POST'
+            });
         });
     }
 
