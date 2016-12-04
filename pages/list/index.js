@@ -10,21 +10,19 @@ Page({
       { name: 'xxx', score: 66 }
     ]  // 排行榜数据，包括：用户名/头像/分数，没有头像就显示默认头像
   },
-  onLoad: function (options) {
 
-  },
-  onReady: function () {
-    // 页面渲染完成
-  },
-  onShow: function () {
+  // 设置当前页面标题
+  setTitle: function () {
+    // 尼玛，手机上调试的时候设置标题无效
     wx.setNavigationBarTitle({
       title: 'Top50达人榜'
     });
   },
-  onHide: function () {
-    // 页面隐藏
+
+  onLoad: function (options) {
+    this.setTitle();
   },
-  onUnload: function () {
-    // 页面关闭
+  onShow: function () {
+    this.setTitle();
   }
 })

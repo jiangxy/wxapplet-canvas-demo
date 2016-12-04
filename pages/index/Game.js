@@ -47,8 +47,9 @@ class Game {
         this.statusCallback(1);
 
         // 播放背景音乐
+        // 有个bug，手机上调试的时候没声音，模拟器里正常
         wx.playBackgroundAudio({
-            // url是从qq音乐中扒出来的
+            // url是从qq音乐中扒出来的，不保证啥时候失效
             dataUrl: 'http://thirdparty.gtimg.com/C200004HA6ys0J8rGF.m4a?vkey=5E66E53735D019ACC0850D1C6A568A246C77EAB0F7142DCF0ABE5592989684F775B726D714B3E8F75F24396509D5511EFD31E583FCA56638&guid=7228154291&fromtag=30',
             success: function (e) {
                 console.debug('play music success');
