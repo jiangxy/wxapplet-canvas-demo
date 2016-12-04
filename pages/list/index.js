@@ -1,19 +1,30 @@
 // pages/list/index.js
 Page({
-  data:{},
-  onLoad:function(options){
-    // 页面初始化 options为页面跳转所带来的参数
+  data: {
+    listData: [
+      { name: 'xxx', pic: '../../images/jxy.jpg', score: 200 },
+      { name: 'xxx', score: 100 },
+      { name: 'xxx', score: 99 },
+      { name: 'xxx', score: 88 },
+      { name: 'xxx', score: 77 },
+      { name: 'xxx', score: 66 }
+    ]  // 排行榜数据，包括：用户名/头像/分数，没有头像就显示默认头像
   },
-  onReady:function(){
+  onLoad: function (options) {
+
+  },
+  onReady: function () {
     // 页面渲染完成
   },
-  onShow:function(){
-    // 页面显示
+  onShow: function () {
+    wx.setNavigationBarTitle({
+      title: 'Top50达人榜'
+    });
   },
-  onHide:function(){
+  onHide: function () {
     // 页面隐藏
   },
-  onUnload:function(){
+  onUnload: function () {
     // 页面关闭
   }
 })
