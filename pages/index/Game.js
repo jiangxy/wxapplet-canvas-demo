@@ -137,11 +137,12 @@ class Game {
 
         // 然后显示一个提示
         var that = this;  // 蛋疼的that
+        // 这里有个bug，如果在有弹窗的情况下切换TAB，弹窗不会消失，不知道微信是怎么搞的
         wx.showModal({
             title: '游戏结束',
             content: this.frameCount > this.maxScore ? '新记录！！你的分数：' + this.frameCount : '你的分数是：' + this.frameCount + '，最高记录：' + this.maxScore,
-            confirmText: '排行榜',
-            cancelText: '再玩一次',
+            confirmText: '我投降',
+            cancelText: '我不服！',
             success: function (res) {
                 let newMaxScore = Math.max(that.frameCount, that.maxScore);
                 wx.setStorageSync('maxScore', newMaxScore);
@@ -150,9 +151,10 @@ class Game {
                 if (res.confirm) {
                     // 将page的状态改为游戏结束
                     that.statusCallback(2);
-                    wx.navigateTo({
-                        url: '../list/index'
-                    });
+                    // 微信的这个页面堆栈的管理也是比较迷
+                    //wx.navigateTo({
+                    //    url: '../list/index'
+                    //});
                 }
                 // 重新开始游戏 
                 else {

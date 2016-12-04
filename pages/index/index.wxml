@@ -5,6 +5,6 @@
   <button id="flyButton" type="primary" bindtouchstart="handleTouchStart" bindtouchend="handleTouchEnd"> 
     {{status===0?'开始游戏':''}}
     {{status===1?'I believe I can fly':''}}
-    {{status===2?'重新开始':''}}
+    {{status===2?'重新挑战':''}}
   </button>
 </view>
