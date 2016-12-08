@@ -5,7 +5,13 @@
 
 # 截图
 
-<img style="display: inline-block;width: 30%;" src="screenshots/1.jpeg" />
-<img style="display: inline-block;width: 30%;" src="screenshots/2.jpeg" />
-<img style="display: inline-block;width: 30%;" src="screenshots/3.jpeg" />
+![](screenshot.png)
+
+# 使用说明
+
+aaaa
+
+# 注意事项
+
+bbbb
 
