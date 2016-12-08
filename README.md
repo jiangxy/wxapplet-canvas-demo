@@ -5,7 +5,7 @@
 
 # 截图
 
-<img style="display:inline-block" src="screenshots/1.jpeg" />
-<img style="display:inline-block" src="screenshots/2.jpeg" />
-<img style="display:inline-block" src="screenshots/3.jpeg" />
+<img style="display: inline-block;width: 30%;" src="screenshots/1.jpeg" />
+<img style="display: inline-block;width: 30%;" src="screenshots/2.jpeg" />
+<img style="display: inline-block;width: 30%;" src="screenshots/3.jpeg" />
 
