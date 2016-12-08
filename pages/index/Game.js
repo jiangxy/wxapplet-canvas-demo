@@ -41,7 +41,7 @@ class Game {
 
         // 只能手动bind this了
         // 绘制下一帧，注意刷新率
-        this.interval = setInterval(this.nextFrame.bind(this), 100);
+        this.interval = setInterval(this.nextFrame.bind(this), 60);
 
         // 将page的状态改为游戏中
         this.statusCallback(1);
@@ -49,12 +49,11 @@ class Game {
         // 播放背景音乐
         // 有个bug，手机上调试的时候没声音，模拟器里正常
         wx.playBackgroundAudio({
-            // url是从qq音乐中扒出来的，不保证啥时候失效
-            dataUrl: 'http://thirdparty.gtimg.com/C200004HA6ys0J8rGF.m4a?vkey=5E66E53735D019ACC0850D1C6A568A246C77EAB0F7142DCF0ABE5592989684F775B726D714B3E8F75F24396509D5511EFD31E583FCA56638&guid=7228154291&fromtag=30',
+            dataUrl: config.bgMusic.url,
             success: function (e) {
-                console.debug('play music success');
+                console.debug('play music success: %o', e);
                 wx.seekBackgroundAudio({
-                    position: 84.39  // 单位是秒，还可以用小数
+                    position: config.bgMusic.offset  // 单位是秒，还可以用小数
                 });
             }
         });
