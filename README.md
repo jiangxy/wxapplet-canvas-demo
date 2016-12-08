@@ -5,7 +5,7 @@
 
 # 截图
 
-![](screenshot.png)
+![](screenshot.jpg)
 
 # 使用说明
 
