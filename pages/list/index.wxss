@@ -1,6 +1,4 @@
-view,
-view:before,
-view:after {
+view {
     box-sizing: border-box;
 }
 
