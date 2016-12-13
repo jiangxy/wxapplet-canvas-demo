@@ -1,6 +1,6 @@
 # 微信小程序demo - 后端
 
-一个很简单的SpringMVC工程，只是试验性质的，都没有用到DB，用一个Map去模拟。
+一个很简单的SpringMVC工程，只是试验性质的，都没有用到DB，而用一个Map去模拟。
 
 使用jetty作为容器，clone下来后执行`mvn jetty:run`即可启动。
 
